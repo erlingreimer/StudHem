@@ -1,5 +1,6 @@
 import type {
-  Building, Contract, Facility, MaintenanceRequest, Property, User,
+  Building, Contract, Conversation, Facility, MaintenanceRequest,
+  Message, Property, User,
 } from '@/types';
 
 export const userFixtures: User[] = [
@@ -101,5 +102,25 @@ export const maintenanceFixtures: MaintenanceRequest[] = [
       { status: 'in_progress', at: '2026-05-11T10:00:00Z' },
       { status: 'resolved', at: '2026-05-12T15:30:00Z', note: 'Bytt cylinder' },
     ],
+  },
+];
+
+export const conversationFixtures: Conversation[] = [
+  { id: 'conv-1', propertyId: 'p-101', participantIds: ['u-res1', 'u-admin'] },
+  { id: 'conv-2', propertyId: 'p-102', participantIds: ['u-res2', 'u-admin'] },
+];
+
+export const messageFixtures: Message[] = [
+  {
+    id: 'msg-1', conversationId: 'conv-1', senderId: 'u-res1',
+    text: 'Hej, finns det extra nycklar?', sentAt: '2026-05-21T09:15:00Z',
+  },
+  {
+    id: 'msg-2', conversationId: 'conv-1', senderId: 'u-admin',
+    text: 'Ja, kom till receptionen så fixar vi det.', sentAt: '2026-05-21T09:20:00Z',
+  },
+  {
+    id: 'msg-3', conversationId: 'conv-2', senderId: 'u-admin',
+    text: 'Välkommen Rebecka! Hör av dig om något.', sentAt: '2026-05-15T10:00:00Z',
   },
 ];

@@ -2,7 +2,8 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { seedDatabase } from '@/services/mock/seed';
 import { readCollection } from '@/services/mock/storage';
 import type {
-  Building, Contract, Facility, MaintenanceRequest, Property, User,
+  Building, Contract, Conversation, Facility, MaintenanceRequest,
+  Message, Property, User,
 } from '@/types';
 
 describe('seedDatabase', () => {
@@ -35,6 +36,19 @@ describe('seedDatabase', () => {
     expect(statuses.has('received')).toBe(true);
     expect(statuses.has('in_progress')).toBe(true);
     expect(statuses.has('resolved')).toBe(true);
+  });
+
+  it('seeds one conversation per active resident with at least one message', () => {
+    seedDatabase();
+    const conversations = readCollection<Conversation>('conversations', []);
+    const messages = readCollection<Message>('messages', []);
+    expect(conversations.length).toBeGreaterThanOrEqual(2);
+    for (const c of conversations) {
+      expect(messages.some((m) => m.conversationId === c.id)).toBe(true);
+    }
+    for (const c of conversations) {
+      expect(c.participantIds).toEqual(expect.arrayContaining(['u-admin']));
+    }
   });
 
   it('is idempotent across all collections', () => {
