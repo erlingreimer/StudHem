@@ -1,6 +1,6 @@
 import type {
-  Building, Contract, Conversation, Facility, Invoice, MaintenanceRequest,
-  Message, Property, User,
+  Booking, Building, Contract, Conversation, Facility, Invoice,
+  MaintenanceRequest, Message, Property, User,
 } from '@/types';
 
 export const userFixtures: User[] = [
@@ -145,5 +145,24 @@ export const invoiceFixtures: Invoice[] = [
     id: 'inv-4', contractId: 'c-2', period: '2026-06',
     amount: 4200, dueDate: '2026-06-30',
     status: 'unpaid',
+  },
+];
+
+export const bookingFixtures: Booking[] = [
+  {
+    id: 'bk-1',
+    facilityType: 'laundry',
+    facilityId: 'f-n-laundry',
+    bookedById: 'u-res1',
+    start: '2026-06-05T09:00:00Z',
+    end: '2026-06-05T12:00:00Z',
+  },
+  {
+    id: 'bk-2',
+    facilityType: 'sauna',
+    facilityId: 'f-n-sauna',
+    bookedById: 'u-res2',
+    start: '2026-06-06T17:00:00Z',
+    end: '2026-06-06T20:00:00Z',
   },
 ];

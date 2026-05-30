@@ -2,8 +2,8 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { seedDatabase } from '@/services/mock/seed';
 import { readCollection } from '@/services/mock/storage';
 import type {
-  Building, Contract, Conversation, Facility, Invoice, MaintenanceRequest,
-  Message, Property, User,
+  Booking, Building, Contract, Conversation, Facility, Invoice,
+  MaintenanceRequest, Message, Property, User,
 } from '@/types';
 
 describe('seedDatabase', () => {
@@ -57,6 +57,12 @@ describe('seedDatabase', () => {
     expect(rows.length).toBeGreaterThanOrEqual(4);
     expect(rows.some((r) => r.status === 'paid')).toBe(true);
     expect(rows.some((r) => r.status === 'unpaid')).toBe(true);
+  });
+
+  it('seeds bookings for demo', () => {
+    seedDatabase();
+    const rows = readCollection<Booking>('bookings', []);
+    expect(rows.length).toBeGreaterThanOrEqual(2);
   });
 
   it('is idempotent across all collections', () => {
