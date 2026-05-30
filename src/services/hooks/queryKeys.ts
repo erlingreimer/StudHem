@@ -5,4 +5,10 @@ export const keys = {
   contractByProperty: (propertyId: string) => ['contracts', 'byProperty', propertyId] as const,
   users: () => ['users'] as const,
   user: (id: string) => ['users', id] as const,
+  maintenance: () => ['maintenance'] as const,
+  maintenanceByResident: (residentId: string) =>
+    ['maintenance', 'byResident', residentId] as const,
+  maintenanceByProperty: (propertyId: string) =>
+    ['maintenance', 'byProperty', propertyId] as const,
+  maintenanceRequest: (id: string) => ['maintenance', id] as const,
 };
