@@ -9,7 +9,35 @@
     "error": "Fel användarnamn eller lösenord",
     "demoHeading": "Demo-inloggningar"
   },
-  "nav": { "admin": "Adminpanel", "home": "Hem", "properties": "Bostäder", "dashboard": "Översikt", "maintenance": "Felanmälningar", "chat": "Chatt", "economy": "Ekonomi", "rent": "Hyra" },
+  "nav": { "admin": "Adminpanel", "home": "Hem", "properties": "Bostäder", "dashboard": "Översikt", "maintenance": "Felanmälningar", "chat": "Chatt", "economy": "Ekonomi", "rent": "Hyra", "bookings": "Bokningar" },
+  "bookings": {
+    "title": "Bokningar",
+    "myTitle": "Mina bokningar",
+    "facility": "Lokal",
+    "selectFacility": "Välj lokal",
+    "selectDate": "Datum",
+    "book": "Boka",
+    "cancel": "Avboka",
+    "yourBooking": "Din bokning",
+    "taken": "Bokad",
+    "available": "Ledig",
+    "empty": "Inga bokningar",
+    "noFacilities": "Inga lokaler i din byggnad",
+    "futureOnly": "Endast framtida",
+    "facilityType": "Typ",
+    "start": "Start",
+    "end": "Slut",
+    "bookedBy": "Bokad av",
+    "errorOverlap": "Tiden är redan bokad",
+    "errorLimit": "Du har redan max antal framtida bokningar för denna typ",
+    "confirmCancel": "Avboka denna bokning?",
+    "types": {
+      "laundry": "Tvättstuga",
+      "sauna": "Bastu",
+      "common_room": "Gemensamhetsrum",
+      "guest_room": "Gästrum"
+    }
+  },
   "economy": {
     "title": "Ekonomi",
     "myTitle": "Min hyra",

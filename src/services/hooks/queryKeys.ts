@@ -16,4 +16,9 @@ export const keys = {
   invoices: () => ['invoices'] as const,
   invoicesByResident: (residentId: string) =>
     ['invoices', 'byResident', residentId] as const,
+  bookings: () => ['bookings'] as const,
+  bookingsByResident: (residentId: string) =>
+    ['bookings', 'byResident', residentId] as const,
+  bookingsByFacility: (facilityId: string) =>
+    ['bookings', 'byFacility', facilityId] as const,
 };
