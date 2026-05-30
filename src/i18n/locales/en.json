@@ -1,0 +1,13 @@
+{
+  "app": { "name": "StudHem" },
+  "common": { "logout": "Sign out", "language": "Language", "theme": "Theme" },
+  "login": {
+    "title": "Sign in",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Sign in",
+    "error": "Wrong username or password",
+    "demoHeading": "Demo logins"
+  },
+  "nav": { "admin": "Admin panel", "home": "Home" }
+}

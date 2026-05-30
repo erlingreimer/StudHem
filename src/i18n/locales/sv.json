@@ -1,0 +1,13 @@
+{
+  "app": { "name": "StudHem" },
+  "common": { "logout": "Logga ut", "language": "Språk", "theme": "Tema" },
+  "login": {
+    "title": "Logga in",
+    "username": "Användarnamn",
+    "password": "Lösenord",
+    "submit": "Logga in",
+    "error": "Fel användarnamn eller lösenord",
+    "demoHeading": "Demo-inloggningar"
+  },
+  "nav": { "admin": "Adminpanel", "home": "Hem" }
+}
