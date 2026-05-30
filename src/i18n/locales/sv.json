@@ -9,7 +9,16 @@
     "error": "Fel användarnamn eller lösenord",
     "demoHeading": "Demo-inloggningar"
   },
-  "nav": { "admin": "Adminpanel", "home": "Hem", "properties": "Bostäder", "dashboard": "Översikt", "maintenance": "Felanmälningar" },
+  "nav": { "admin": "Adminpanel", "home": "Hem", "properties": "Bostäder", "dashboard": "Översikt", "maintenance": "Felanmälningar", "chat": "Chatt" },
+  "chat": {
+    "title": "Chatt",
+    "send": "Skicka",
+    "placeholder": "Skriv ett meddelande...",
+    "empty": "Inga meddelanden ännu",
+    "noConversation": "Välj en konversation",
+    "noConversations": "Inga konversationer",
+    "you": "Du"
+  },
   "maintenance": {
     "title": "Felanmälningar",
     "myTitle": "Mina felanmälningar",

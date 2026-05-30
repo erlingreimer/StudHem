@@ -9,7 +9,16 @@
     "error": "Wrong username or password",
     "demoHeading": "Demo logins"
   },
-  "nav": { "admin": "Admin panel", "home": "Home", "properties": "Properties", "dashboard": "Overview", "maintenance": "Maintenance" },
+  "nav": { "admin": "Admin panel", "home": "Home", "properties": "Properties", "dashboard": "Overview", "maintenance": "Maintenance", "chat": "Chat" },
+  "chat": {
+    "title": "Chat",
+    "send": "Send",
+    "placeholder": "Write a message...",
+    "empty": "No messages yet",
+    "noConversation": "Pick a conversation",
+    "noConversations": "No conversations",
+    "you": "You"
+  },
   "maintenance": {
     "title": "Maintenance",
     "myTitle": "My maintenance",

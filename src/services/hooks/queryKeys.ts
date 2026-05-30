@@ -11,4 +11,6 @@ export const keys = {
   maintenanceByProperty: (propertyId: string) =>
     ['maintenance', 'byProperty', propertyId] as const,
   maintenanceRequest: (id: string) => ['maintenance', id] as const,
+  conversations: (userId: string) => ['conversations', userId] as const,
+  messages: (conversationId: string) => ['messages', conversationId] as const,
 };
