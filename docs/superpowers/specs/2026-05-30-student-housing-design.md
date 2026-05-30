@@ -132,6 +132,15 @@ type MaintenanceCategory =
   the password is updated. Guards keep `active` users out of `/onboarding` and `pending`
   users out of the rest of the app until onboarding completes.
 
+- **Routing addition.** `/onboarding` is a new **guarded** route not present in the base
+  spec routing table (§7). The plan must add it explicitly: reachable only by an
+  authenticated `pending` resident; all other states redirect to their role home.
+
+- **Configurable constants.** The notice period (D9, 2 months) and the per-resident
+  future-booking limit (D8/§5.6, default 2 per facility type) both live in a single
+  `src/config/constants.ts` module so they are trivial to change and easy to import into
+  tests.
+
 ---
 
 ## 5. Feature designs (by base-spec milestone)
@@ -234,3 +243,7 @@ during planning or implementation:
 - Seed dataset size: ~8–10 properties across 2 buildings; 1 admin + 1 staff + 3 residents
   (one `pending` to demo onboarding); supporting contracts, invoices, requests, bookings,
   messages, and sv+en documents.
+- Facility seed (deterministic for booking overlap/limit tests): each building seeds **1
+  laundry + 1 sauna + 1 common room + 1 guest room**. Fixtures include at least one
+  pre-existing booking that an overlap test can collide with, and a resident already at the
+  future-booking limit for one facility type.
