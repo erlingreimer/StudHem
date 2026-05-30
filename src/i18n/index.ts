@@ -13,6 +13,8 @@ void i18n.use(initReactI18next).init({
   lng: initialLang,
   fallbackLng: 'en',
   interpolation: { escapeValue: false },
+  // Disable single-underscore plural detection so keys like "in_progress" resolve as literals.
+  pluralSeparator: '|',
 });
 
 i18n.on('languageChanged', (lng) => localStorage.setItem(LANG_KEY, lng));

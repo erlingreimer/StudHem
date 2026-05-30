@@ -9,5 +9,10 @@
     "error": "Fel användarnamn eller lösenord",
     "demoHeading": "Demo-inloggningar"
   },
-  "nav": { "admin": "Adminpanel", "home": "Hem" }
+  "nav": { "admin": "Adminpanel", "home": "Hem" },
+  "status": {
+    "property": { "vacant": "Ledigt", "occupied": "Uthyrt" },
+    "maintenance": { "received": "Mottagen", "in_progress": "Pågår", "resolved": "Löst" },
+    "invoice": { "paid": "Betald", "unpaid": "Obetald", "overdue": "Försenad" }
+  }
 }
