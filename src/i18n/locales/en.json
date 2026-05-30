@@ -15,6 +15,22 @@
     "maintenance": { "received": "Received", "in_progress": "In progress", "resolved": "Resolved" },
     "invoice": { "paid": "Paid", "unpaid": "Unpaid", "overdue": "Overdue" }
   },
+  "propertyDetail": {
+    "back": "Back",
+    "edit": "Edit",
+    "invite": "Invite resident",
+    "info": "Information",
+    "resident": "Resident",
+    "contract": "Contract",
+    "maintenance": "Maintenance",
+    "noResident": "No resident",
+    "noContract": "No contract",
+    "maintenancePlaceholder": "Maintenance history arrives in the next milestone",
+    "notFound": "Property not found",
+    "contractRent": "Rent",
+    "contractStart": "Start date",
+    "contractTerms": "Terms"
+  },
   "properties": {
     "title": "Properties",
     "search": "Search",

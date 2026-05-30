@@ -15,6 +15,22 @@
     "maintenance": { "received": "Mottagen", "in_progress": "Pågår", "resolved": "Löst" },
     "invoice": { "paid": "Betald", "unpaid": "Obetald", "overdue": "Försenad" }
   },
+  "propertyDetail": {
+    "back": "Tillbaka",
+    "edit": "Redigera",
+    "invite": "Bjud in boende",
+    "info": "Information",
+    "resident": "Boende",
+    "contract": "Kontrakt",
+    "maintenance": "Felanmälningar",
+    "noResident": "Ingen boende",
+    "noContract": "Inget kontrakt",
+    "maintenancePlaceholder": "Felanmälningar visas i nästa milstolpe",
+    "notFound": "Bostaden kunde inte hittas",
+    "contractRent": "Hyra",
+    "contractStart": "Startdatum",
+    "contractTerms": "Villkor"
+  },
   "properties": {
     "title": "Bostäder",
     "search": "Sök",
