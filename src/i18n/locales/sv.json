@@ -15,6 +15,15 @@
     "maintenance": { "received": "Mottagen", "in_progress": "Pågår", "resolved": "Löst" },
     "invoice": { "paid": "Betald", "unpaid": "Obetald", "overdue": "Försenad" }
   },
+  "dashboard": {
+    "title": "Översikt",
+    "properties": "Bostäder",
+    "occupancy": "Beläggning",
+    "vacancies": "Lediga",
+    "openMaintenance": "Öppna ärenden",
+    "unpaidRent": "Obetalda hyror",
+    "upcomingMoveOuts": "Kommande utflyttningar"
+  },
   "invite": {
     "title": "Bjud in boende",
     "name": "Namn",
