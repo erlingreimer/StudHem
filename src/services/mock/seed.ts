@@ -1,6 +1,6 @@
 import { hasKey, writeCollection } from './storage';
 import {
-  buildingFixtures, contractFixtures, facilityFixtures,
+  buildingFixtures, contractFixtures, facilityFixtures, maintenanceFixtures,
   propertyFixtures, userFixtures,
 } from './fixtures';
 
@@ -11,4 +11,5 @@ export function seedDatabase(): void {
   if (!hasKey('properties')) writeCollection('properties', propertyFixtures);
   if (!hasKey('contracts')) writeCollection('contracts', contractFixtures);
   if (!hasKey('facilities')) writeCollection('facilities', facilityFixtures);
+  if (!hasKey('maintenance')) writeCollection('maintenance', maintenanceFixtures);
 }

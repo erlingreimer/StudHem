@@ -1,4 +1,6 @@
-import type { Building, Contract, Facility, Property, User } from '@/types';
+import type {
+  Building, Contract, Facility, MaintenanceRequest, Property, User,
+} from '@/types';
 
 export const userFixtures: User[] = [
   { id: 'u-admin', name: 'Anna Admin', email: 'anna@studhem.se', username: 'admin',
@@ -53,4 +55,51 @@ export const facilityFixtures: Facility[] = [
   { id: 'f-s-sauna',   type: 'sauna',       buildingId: 'b-sodra', label: 'Bastu Södra' },
   { id: 'f-s-common',  type: 'common_room', buildingId: 'b-sodra', label: 'Gemensamhetsrum Södra' },
   { id: 'f-s-guest',   type: 'guest_room',  buildingId: 'b-sodra', label: 'Gästrum Södra' },
+];
+
+export const maintenanceFixtures: MaintenanceRequest[] = [
+  {
+    id: 'mr-1',
+    propertyId: 'p-101',
+    residentId: 'u-res1',
+    category: 'plumbing',
+    description: 'Vattenkran droppar i köket.',
+    photoUrls: [],
+    status: 'received',
+    createdAt: '2026-05-20T08:00:00Z',
+    history: [
+      { status: 'received', at: '2026-05-20T08:00:00Z' },
+    ],
+  },
+  {
+    id: 'mr-2',
+    propertyId: 'p-102',
+    residentId: 'u-res2',
+    category: 'appliance',
+    description: 'Kylskåpet fryser inte ordentligt.',
+    photoUrls: [],
+    status: 'in_progress',
+    assignedTo: 'u-staff',
+    createdAt: '2026-05-18T11:30:00Z',
+    history: [
+      { status: 'received', at: '2026-05-18T11:30:00Z' },
+      { status: 'in_progress', at: '2026-05-19T09:00:00Z', note: 'Tekniker bokad' },
+    ],
+  },
+  {
+    id: 'mr-3',
+    propertyId: 'p-101',
+    residentId: 'u-res1',
+    category: 'door_lock',
+    description: 'Låset hakar upp.',
+    photoUrls: [],
+    status: 'resolved',
+    assignedTo: 'u-staff',
+    createdAt: '2026-05-10T14:00:00Z',
+    history: [
+      { status: 'received', at: '2026-05-10T14:00:00Z' },
+      { status: 'in_progress', at: '2026-05-11T10:00:00Z' },
+      { status: 'resolved', at: '2026-05-12T15:30:00Z', note: 'Bytt cylinder' },
+    ],
+  },
 ];
