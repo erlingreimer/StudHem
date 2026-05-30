@@ -9,7 +9,7 @@
     "error": "Wrong username or password",
     "demoHeading": "Demo logins"
   },
-  "nav": { "admin": "Admin panel", "home": "Home" },
+  "nav": { "admin": "Admin panel", "home": "Home", "properties": "Properties", "dashboard": "Overview" },
   "status": {
     "property": { "vacant": "Vacant", "occupied": "Occupied" },
     "maintenance": { "received": "Received", "in_progress": "In progress", "resolved": "Resolved" },

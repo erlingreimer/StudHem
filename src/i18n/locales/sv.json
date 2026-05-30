@@ -9,7 +9,7 @@
     "error": "Fel användarnamn eller lösenord",
     "demoHeading": "Demo-inloggningar"
   },
-  "nav": { "admin": "Adminpanel", "home": "Hem" },
+  "nav": { "admin": "Adminpanel", "home": "Hem", "properties": "Bostäder", "dashboard": "Översikt" },
   "status": {
     "property": { "vacant": "Ledigt", "occupied": "Uthyrt" },
     "maintenance": { "received": "Mottagen", "in_progress": "Pågår", "resolved": "Löst" },
