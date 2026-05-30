@@ -16,6 +16,8 @@ import { StatusChip } from '@/components/StatusChip';
 import { useProperty } from '@/services/hooks/properties';
 import { useContractByProperty } from '@/services/hooks/contracts';
 import { useUser } from '@/services/hooks/users';
+import { useMaintenanceByProperty } from '@/services/hooks/maintenance';
+import { MaintenanceRequestList } from '@/features/maintenance/MaintenanceRequestList';
 import { PropertyFormDialog } from './PropertyFormDialog';
 import { InviteResidentDialog } from './InviteResidentDialog';
 
@@ -25,6 +27,7 @@ export function PropertyDetailPage() {
   const property = useProperty(id);
   const contract = useContractByProperty(id);
   const resident = useUser(property.data?.residentId);
+  const requests = useMaintenanceByProperty(id);
 
   const [editing, setEditing] = useState(false);
   const [inviting, setInviting] = useState(false);
@@ -108,7 +111,12 @@ export function PropertyDetailPage() {
         <Card>
           <CardContent>
             <Typography variant="h6" sx={{ mb: 1 }}>{t('propertyDetail.maintenance')}</Typography>
-            <Typography color="text.secondary">{t('propertyDetail.maintenancePlaceholder')}</Typography>
+            {requests.isLoading
+              ? <Skeleton variant="rectangular" height={120} />
+              : <MaintenanceRequestList
+                  rows={requests.data ?? []}
+                  emptyLabel={t('maintenance.empty')}
+                />}
           </CardContent>
         </Card>
       </Stack>

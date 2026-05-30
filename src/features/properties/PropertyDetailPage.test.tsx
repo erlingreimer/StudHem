@@ -34,6 +34,12 @@ describe('PropertyDetailPage', () => {
     expect(screen.getByText(/inget kontrakt/i)).toBeInTheDocument();
   });
 
+  it('renders this property\'s maintenance requests', async () => {
+    renderWithProviders(<Tree />, { route: '/admin/properties/p-101' });
+    await waitFor(() => expect(screen.getByText(/vattenkran droppar/i)).toBeInTheDocument());
+    expect(screen.getByText(/låset hakar upp/i)).toBeInTheDocument();
+  });
+
   it('shows a not-found message for an unknown id', async () => {
     renderWithProviders(<Tree />, { route: '/admin/properties/does-not-exist' });
     await waitFor(() =>
