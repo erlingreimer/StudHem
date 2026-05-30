@@ -12,6 +12,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ApartmentIcon from '@mui/icons-material/Apartment';
+import BuildIcon from '@mui/icons-material/Build';
 import { AppBarActions } from './AppBarActions';
 
 const DRAWER_WIDTH = 240;
@@ -23,6 +24,7 @@ export function AdminLayout() {
     () => [
       { to: '/admin', icon: <DashboardIcon />, label: t('nav.dashboard'), end: true },
       { to: '/admin/properties', icon: <ApartmentIcon />, label: t('nav.properties'), end: false },
+      { to: '/admin/maintenance', icon: <BuildIcon />, label: t('nav.maintenance'), end: false },
     ],
     [t],
   );

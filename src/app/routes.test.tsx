@@ -45,11 +45,30 @@ describe('AppRoutes', () => {
     );
   });
 
-  it('lands a resident on resident home', () => {
+  it('lands a resident on resident home', async () => {
     localStorage.setItem('studhem.v1.session', JSON.stringify(
       { id: 'u-res1', username: 'resident', role: 'resident', name: 'R', email: 'r@r.se', status: 'active' },
     ));
     renderWithProviders(<AppRoutes />, { route: '/home' });
-    expect(screen.getByText(/^hem$/i)).toBeInTheDocument();
+    await waitFor(() =>
+      expect(screen.getByRole('heading', { name: /^hem$/i })).toBeInTheDocument(),
+    );
+  });
+
+  it('renders the admin maintenance page', async () => {
+    localStorage.setItem('studhem.v1.session', JSON.stringify(
+      { id: 'u-admin', username: 'admin', role: 'admin', name: 'A', email: 'a@a.se', status: 'active' },
+    ));
+    renderWithProviders(<AppRoutes />, { route: '/admin/maintenance' });
+    await waitFor(() => expect(screen.getByText(/vattenkran droppar/i)).toBeInTheDocument());
+  });
+
+  it('renders the resident maintenance page under the resident layout', async () => {
+    localStorage.setItem('studhem.v1.session', JSON.stringify(
+      { id: 'u-res1', username: 'resident', role: 'resident', name: 'R', email: 'r@r.se', status: 'active' },
+    ));
+    renderWithProviders(<AppRoutes />, { route: '/maintenance' });
+    await waitFor(() => expect(screen.getByText(/vattenkran droppar/i)).toBeInTheDocument());
+    expect(screen.getByRole('button', { name: /felanmälningar/i })).toBeInTheDocument();
   });
 });
