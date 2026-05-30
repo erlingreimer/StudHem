@@ -15,6 +15,18 @@
     "maintenance": { "received": "Mottagen", "in_progress": "Pågår", "resolved": "Löst" },
     "invoice": { "paid": "Betald", "unpaid": "Obetald", "overdue": "Försenad" }
   },
+  "invite": {
+    "title": "Bjud in boende",
+    "name": "Namn",
+    "email": "E-post",
+    "send": "Skicka inbjudan",
+    "cancel": "Avbryt",
+    "successTitle": "Inbjudan skapad",
+    "tempPasswordHint": "Tillfälligt lösenord — dela med den boende",
+    "username": "Användarnamn",
+    "done": "Klart",
+    "required": "Obligatoriskt"
+  },
   "propertyDetail": {
     "back": "Tillbaka",
     "edit": "Redigera",

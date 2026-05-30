@@ -10,7 +10,7 @@ export function useProperties() {
 export function useProperty(id: string | undefined) {
   return useQuery({
     queryKey: id ? keys.property(id) : ['properties', 'none'],
-    queryFn: () => api.properties.get(id as string),
+    queryFn: async () => (await api.properties.get(id as string)) ?? null,
     enabled: Boolean(id),
   });
 }

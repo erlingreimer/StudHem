@@ -10,7 +10,7 @@ export function useUsers() {
 export function useUser(id: string | undefined) {
   return useQuery({
     queryKey: id ? keys.user(id) : ['users', 'none'],
-    queryFn: () => api.users.get(id as string),
+    queryFn: async () => (await api.users.get(id as string)) ?? null,
     enabled: Boolean(id),
   });
 }
