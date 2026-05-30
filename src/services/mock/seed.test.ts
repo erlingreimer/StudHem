@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { seedDatabase } from '@/services/mock/seed';
 import { readCollection } from '@/services/mock/storage';
 import type {
-  Building, Contract, Conversation, Facility, MaintenanceRequest,
+  Building, Contract, Conversation, Facility, Invoice, MaintenanceRequest,
   Message, Property, User,
 } from '@/types';
 
@@ -49,6 +49,14 @@ describe('seedDatabase', () => {
     for (const c of conversations) {
       expect(c.participantIds).toEqual(expect.arrayContaining(['u-admin']));
     }
+  });
+
+  it('seeds invoices covering paid and unpaid', () => {
+    seedDatabase();
+    const rows = readCollection<Invoice>('invoices', []);
+    expect(rows.length).toBeGreaterThanOrEqual(4);
+    expect(rows.some((r) => r.status === 'paid')).toBe(true);
+    expect(rows.some((r) => r.status === 'unpaid')).toBe(true);
   });
 
   it('is idempotent across all collections', () => {

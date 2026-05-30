@@ -1,5 +1,5 @@
 import type {
-  Building, Contract, Conversation, Facility, MaintenanceRequest,
+  Building, Contract, Conversation, Facility, Invoice, MaintenanceRequest,
   Message, Property, User,
 } from '@/types';
 
@@ -122,5 +122,28 @@ export const messageFixtures: Message[] = [
   {
     id: 'msg-3', conversationId: 'conv-2', senderId: 'u-admin',
     text: 'Välkommen Rebecka! Hör av dig om något.', sentAt: '2026-05-15T10:00:00Z',
+  },
+];
+
+export const invoiceFixtures: Invoice[] = [
+  {
+    id: 'inv-1', contractId: 'c-1', period: '2026-03',
+    amount: 4200, dueDate: '2026-03-31',
+    status: 'paid', paidAt: '2026-03-25T10:00:00Z',
+  },
+  {
+    id: 'inv-2', contractId: 'c-1', period: '2026-04',
+    amount: 4200, dueDate: '2026-04-30',
+    status: 'unpaid',
+  },
+  {
+    id: 'inv-3', contractId: 'c-1', period: '2026-06',
+    amount: 4200, dueDate: '2026-06-30',
+    status: 'unpaid',
+  },
+  {
+    id: 'inv-4', contractId: 'c-2', period: '2026-06',
+    amount: 4200, dueDate: '2026-06-30',
+    status: 'unpaid',
   },
 ];
