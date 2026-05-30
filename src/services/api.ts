@@ -1,4 +1,7 @@
-import type { Contract, Property, SafeUser } from '@/types';
+import type {
+  Contract, MaintenanceCategory, MaintenanceRequest, MaintenanceStatus,
+  Property, SafeUser,
+} from '@/types';
 
 export interface AuthApi {
   login(username: string, password: string): Promise<SafeUser>;
@@ -34,10 +37,29 @@ export interface UsersApi {
   setPassword(userId: string, password: string): Promise<SafeUser>;
 }
 
+export interface MaintenanceCreateInput {
+  propertyId: string;
+  residentId: string;
+  category: MaintenanceCategory;
+  description: string;
+  photoUrls: string[];
+}
+
+export interface MaintenanceApi {
+  list(): Promise<MaintenanceRequest[]>;
+  byResident(residentId: string): Promise<MaintenanceRequest[]>;
+  byProperty(propertyId: string): Promise<MaintenanceRequest[]>;
+  get(id: string): Promise<MaintenanceRequest | undefined>;
+  create(input: MaintenanceCreateInput): Promise<MaintenanceRequest>;
+  updateStatus(id: string, status: MaintenanceStatus, note?: string): Promise<MaintenanceRequest>;
+  assign(id: string, staffUserId: string | undefined): Promise<MaintenanceRequest>;
+}
+
 /** The backend contract. Mock impl today; a REST impl can replace it later. */
 export interface Api {
   auth: AuthApi;
   properties: PropertiesApi;
   contracts: ContractsApi;
   users: UsersApi;
+  maintenance: MaintenanceApi;
 }
