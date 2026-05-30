@@ -118,3 +118,9 @@ export interface DocumentItem {
   url: string;
   language: 'sv' | 'en';
 }
+
+export interface Building {
+  id: string;
+  name: string;
+  address: string;
+}
