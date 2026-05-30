@@ -13,6 +13,7 @@ import Box from '@mui/material/Box';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import BuildIcon from '@mui/icons-material/Build';
+import ChatIcon from '@mui/icons-material/Chat';
 import { AppBarActions } from './AppBarActions';
 
 const DRAWER_WIDTH = 240;
@@ -25,6 +26,7 @@ export function AdminLayout() {
       { to: '/admin', icon: <DashboardIcon />, label: t('nav.dashboard'), end: true },
       { to: '/admin/properties', icon: <ApartmentIcon />, label: t('nav.properties'), end: false },
       { to: '/admin/maintenance', icon: <BuildIcon />, label: t('nav.maintenance'), end: false },
+      { to: '/admin/chat', icon: <ChatIcon />, label: t('nav.chat'), end: false },
     ],
     [t],
   );

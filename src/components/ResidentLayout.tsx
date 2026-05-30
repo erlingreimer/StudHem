@@ -9,6 +9,7 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
 import BuildIcon from '@mui/icons-material/Build';
+import ChatIcon from '@mui/icons-material/Chat';
 import { AppBarActions } from './AppBarActions';
 
 export function ResidentLayout() {
@@ -16,7 +17,11 @@ export function ResidentLayout() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  const value = pathname.startsWith('/maintenance') ? '/maintenance' : '/home';
+  const value = pathname.startsWith('/maintenance')
+    ? '/maintenance'
+    : pathname.startsWith('/chat')
+      ? '/chat'
+      : '/home';
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100dvh', pb: 8 }}>
@@ -44,6 +49,11 @@ export function ResidentLayout() {
             value="/maintenance"
             label={t('nav.maintenance')}
             icon={<BuildIcon />}
+          />
+          <BottomNavigationAction
+            value="/chat"
+            label={t('nav.chat')}
+            icon={<ChatIcon />}
           />
         </BottomNavigation>
       </Paper>
