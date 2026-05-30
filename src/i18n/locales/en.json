@@ -9,7 +9,35 @@
     "error": "Wrong username or password",
     "demoHeading": "Demo logins"
   },
-  "nav": { "admin": "Admin panel", "home": "Home", "properties": "Properties", "dashboard": "Overview", "maintenance": "Maintenance", "chat": "Chat", "economy": "Economy", "rent": "Rent" },
+  "nav": { "admin": "Admin panel", "home": "Home", "properties": "Properties", "dashboard": "Overview", "maintenance": "Maintenance", "chat": "Chat", "economy": "Economy", "rent": "Rent", "bookings": "Bookings" },
+  "bookings": {
+    "title": "Bookings",
+    "myTitle": "My bookings",
+    "facility": "Facility",
+    "selectFacility": "Pick a facility",
+    "selectDate": "Date",
+    "book": "Book",
+    "cancel": "Cancel",
+    "yourBooking": "Your booking",
+    "taken": "Taken",
+    "available": "Available",
+    "empty": "No bookings",
+    "noFacilities": "No facilities in your building",
+    "futureOnly": "Future only",
+    "facilityType": "Type",
+    "start": "Start",
+    "end": "End",
+    "bookedBy": "Booked by",
+    "errorOverlap": "That time is already booked",
+    "errorLimit": "You already have the max future bookings for this type",
+    "confirmCancel": "Cancel this booking?",
+    "types": {
+      "laundry": "Laundry",
+      "sauna": "Sauna",
+      "common_room": "Common room",
+      "guest_room": "Guest room"
+    }
+  },
   "economy": {
     "title": "Economy",
     "myTitle": "My rent",
