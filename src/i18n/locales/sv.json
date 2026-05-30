@@ -15,6 +15,14 @@
     "maintenance": { "received": "Mottagen", "in_progress": "Pågår", "resolved": "Löst" },
     "invoice": { "paid": "Betald", "unpaid": "Obetald", "overdue": "Försenad" }
   },
+  "onboarding": {
+    "title": "Välkommen — välj ditt lösenord",
+    "password": "Nytt lösenord",
+    "confirm": "Bekräfta lösenord",
+    "submit": "Spara och fortsätt",
+    "mismatch": "Lösenorden matchar inte",
+    "tooShort": "Minst 8 tecken"
+  },
   "dashboard": {
     "title": "Översikt",
     "properties": "Bostäder",

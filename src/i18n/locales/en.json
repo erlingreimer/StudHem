@@ -15,6 +15,14 @@
     "maintenance": { "received": "Received", "in_progress": "In progress", "resolved": "Resolved" },
     "invoice": { "paid": "Paid", "unpaid": "Unpaid", "overdue": "Overdue" }
   },
+  "onboarding": {
+    "title": "Welcome — set your password",
+    "password": "New password",
+    "confirm": "Confirm password",
+    "submit": "Save and continue",
+    "mismatch": "Passwords don't match",
+    "tooShort": "At least 8 characters"
+  },
   "dashboard": {
     "title": "Overview",
     "properties": "Properties",

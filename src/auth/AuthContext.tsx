@@ -9,6 +9,7 @@ interface AuthContextValue {
   user: SafeUser | null;
   login: (username: string, password: string) => Promise<SafeUser>;
   logout: () => void;
+  refreshUser: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -38,6 +39,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       logout() {
         localStorage.removeItem(SESSION_KEY);
         setUser(null);
+      },
+      async refreshUser() {
+        if (!user) return;
+        const fresh = await api.users.get(user.id);
+        if (fresh) {
+          localStorage.setItem(SESSION_KEY, JSON.stringify(fresh));
+          setUser(fresh);
+        }
       },
     }),
     [user],

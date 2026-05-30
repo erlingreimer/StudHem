@@ -35,7 +35,7 @@ export function LoginPage() {
     setError(false);
     try {
       const user = await login(username, password);
-      navigate(homePathFor(user.role), { replace: true });
+      navigate(homePathFor(user.role, user.status), { replace: true });
     } catch {
       setError(true);
     }
