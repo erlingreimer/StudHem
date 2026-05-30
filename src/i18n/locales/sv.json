@@ -14,5 +14,33 @@
     "property": { "vacant": "Ledigt", "occupied": "Uthyrt" },
     "maintenance": { "received": "Mottagen", "in_progress": "Pågår", "resolved": "Löst" },
     "invoice": { "paid": "Betald", "unpaid": "Obetald", "overdue": "Försenad" }
+  },
+  "properties": {
+    "title": "Bostäder",
+    "search": "Sök",
+    "statusFilter": "Status",
+    "all": "Alla",
+    "name": "Namn",
+    "address": "Adress",
+    "roomType": "Typ",
+    "rent": "Hyra",
+    "status": "Status",
+    "actions": "Åtgärder",
+    "new": "Ny bostad",
+    "loadError": "Kunde inte ladda bostäder",
+    "empty": "Inga bostäder",
+    "form": {
+      "createTitle": "Ny bostad",
+      "editTitle": "Redigera bostad",
+      "building": "Hus",
+      "name": "Namn",
+      "address": "Adress",
+      "roomType": "Typ",
+      "rent": "Hyra",
+      "description": "Beskrivning",
+      "save": "Spara",
+      "cancel": "Avbryt",
+      "required": "Obligatoriskt"
+    }
   }
 }

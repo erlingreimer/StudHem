@@ -14,5 +14,33 @@
     "property": { "vacant": "Vacant", "occupied": "Occupied" },
     "maintenance": { "received": "Received", "in_progress": "In progress", "resolved": "Resolved" },
     "invoice": { "paid": "Paid", "unpaid": "Unpaid", "overdue": "Overdue" }
+  },
+  "properties": {
+    "title": "Properties",
+    "search": "Search",
+    "statusFilter": "Status",
+    "all": "All",
+    "name": "Name",
+    "address": "Address",
+    "roomType": "Type",
+    "rent": "Rent",
+    "status": "Status",
+    "actions": "Actions",
+    "new": "New property",
+    "loadError": "Could not load properties",
+    "empty": "No properties",
+    "form": {
+      "createTitle": "New property",
+      "editTitle": "Edit property",
+      "building": "Building",
+      "name": "Name",
+      "address": "Address",
+      "roomType": "Type",
+      "rent": "Rent",
+      "description": "Description",
+      "save": "Save",
+      "cancel": "Cancel",
+      "required": "Required"
+    }
   }
 }
