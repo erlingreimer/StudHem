@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import Skeleton from '@mui/material/Skeleton';
 import { useProperties } from '@/services/hooks/properties';
 import { useMaintenanceRequests } from '@/services/hooks/maintenance';
+import { useInvoices } from '@/services/hooks/economy';
 
 interface CardSpec {
   label: string;
@@ -36,19 +37,22 @@ export function AdminDashboard() {
   const { t } = useTranslation();
   const properties = useProperties();
   const maintenance = useMaintenanceRequests();
+  const invoices = useInvoices();
   const total = properties.data?.length ?? 0;
   const occupied = properties.data?.filter((p) => p.status === 'occupied').length ?? 0;
   const occupancyPct = total === 0 ? 0 : Math.round((occupied / total) * 100);
   const vacancies = total - occupied;
   const openMaintenance =
     maintenance.data?.filter((r) => r.status !== 'resolved').length ?? 0;
+  const unpaid =
+    invoices.data?.filter((r) => r.status !== 'paid').length ?? 0;
 
   const cards: CardSpec[] = [
     { label: t('dashboard.properties'), value: total, to: '/admin/properties' },
     { label: t('dashboard.occupancy'), value: `${occupancyPct}%`, to: '/admin/properties' },
     { label: t('dashboard.vacancies'), value: vacancies, to: '/admin/properties' },
     { label: t('dashboard.openMaintenance'), value: openMaintenance, to: '/admin/maintenance' },
-    { label: t('dashboard.unpaidRent'), value: 0 },
+    { label: t('dashboard.unpaidRent'), value: unpaid, to: '/admin/economy' },
     { label: t('dashboard.upcomingMoveOuts'), value: 0 },
   ];
 

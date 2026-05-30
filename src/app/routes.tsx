@@ -9,6 +9,8 @@ import { AdminMaintenancePage } from '@/features/maintenance/AdminMaintenancePag
 import { ResidentMaintenancePage } from '@/features/maintenance/ResidentMaintenancePage';
 import { AdminChatPage } from '@/features/chat/AdminChatPage';
 import { ResidentChatPage } from '@/features/chat/ResidentChatPage';
+import { AdminEconomyPage } from '@/features/economy/AdminEconomyPage';
+import { ResidentRentPage } from '@/features/economy/ResidentRentPage';
 import { AdminLayout } from '@/components/AdminLayout';
 import { ResidentLayout } from '@/components/ResidentLayout';
 import { RequirePending, RequireRole, RootRedirect } from '@/auth/guards';
@@ -30,6 +32,7 @@ export function AppRoutes() {
         <Route path="properties/:id" element={<PropertyDetailPage />} />
         <Route path="maintenance" element={<AdminMaintenancePage />} />
         <Route path="chat" element={<AdminChatPage />} />
+        <Route path="economy" element={<AdminEconomyPage />} />
       </Route>
       <Route
         element={<RequireRole roles={['resident']}><ResidentLayout /></RequireRole>}
@@ -37,6 +40,7 @@ export function AppRoutes() {
         <Route path="/home" element={<ResidentHome />} />
         <Route path="/maintenance" element={<ResidentMaintenancePage />} />
         <Route path="/chat" element={<ResidentChatPage />} />
+        <Route path="/rent" element={<ResidentRentPage />} />
       </Route>
       <Route path="*" element={<RootRedirect />} />
     </Routes>
