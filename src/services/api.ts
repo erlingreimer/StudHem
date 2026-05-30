@@ -1,6 +1,6 @@
 import type {
-  Contract, Conversation, Invoice, MaintenanceCategory, MaintenanceRequest,
-  MaintenanceStatus, Message, Property, SafeUser,
+  Booking, Contract, Conversation, FacilityType, Invoice, MaintenanceCategory,
+  MaintenanceRequest, MaintenanceStatus, Message, Property, SafeUser,
 } from '@/types';
 
 export interface AuthApi {
@@ -76,6 +76,22 @@ export interface EconomyApi {
   sendReminder(invoiceId: string): Promise<void>;
 }
 
+export interface CreateBookingInput {
+  facilityType: FacilityType;
+  facilityId: string;
+  bookedById: string;
+  start: string;
+  end: string;
+}
+
+export interface BookingsApi {
+  list(): Promise<Booking[]>;
+  byResident(residentId: string): Promise<Booking[]>;
+  byFacility(facilityId: string): Promise<Booking[]>;
+  create(input: CreateBookingInput): Promise<Booking>;
+  cancel(bookingId: string): Promise<void>;
+}
+
 /** The backend contract. Mock impl today; a REST impl can replace it later. */
 export interface Api {
   auth: AuthApi;
@@ -85,4 +101,5 @@ export interface Api {
   maintenance: MaintenanceApi;
   chat: ChatApi;
   economy: EconomyApi;
+  bookings: BookingsApi;
 }

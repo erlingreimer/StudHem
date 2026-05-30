@@ -7,6 +7,7 @@ import { createUsersService } from './usersService';
 import { createMaintenanceService } from './maintenanceService';
 import { createChatService } from './chatService';
 import { createEconomyService } from './economyService';
+import { createBookingsService } from './bookingsService';
 
 export function createMockApi(): Api {
   seedDatabase();
@@ -18,5 +19,6 @@ export function createMockApi(): Api {
     maintenance: createMaintenanceService(),
     chat: createChatService(),
     economy: createEconomyService(),
+    bookings: createBookingsService(),
   };
 }
