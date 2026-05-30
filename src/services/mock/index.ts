@@ -5,6 +5,7 @@ import { createPropertiesService } from './propertiesService';
 import { createContractsService } from './contractsService';
 import { createUsersService } from './usersService';
 import { createMaintenanceService } from './maintenanceService';
+import { createChatService } from './chatService';
 
 export function createMockApi(): Api {
   seedDatabase();
@@ -14,5 +15,6 @@ export function createMockApi(): Api {
     contracts: createContractsService(),
     users: createUsersService(),
     maintenance: createMaintenanceService(),
+    chat: createChatService(),
   };
 }

@@ -1,6 +1,6 @@
 import type {
-  Contract, MaintenanceCategory, MaintenanceRequest, MaintenanceStatus,
-  Property, SafeUser,
+  Contract, Conversation, MaintenanceCategory, MaintenanceRequest,
+  MaintenanceStatus, Message, Property, SafeUser,
 } from '@/types';
 
 export interface AuthApi {
@@ -55,6 +55,18 @@ export interface MaintenanceApi {
   assign(id: string, staffUserId: string | undefined): Promise<MaintenanceRequest>;
 }
 
+export interface SendMessageInput {
+  conversationId: string;
+  senderId: string;
+  text: string;
+}
+
+export interface ChatApi {
+  listConversations(userId: string): Promise<Conversation[]>;
+  listMessages(conversationId: string): Promise<Message[]>;
+  sendMessage(input: SendMessageInput): Promise<Message>;
+}
+
 /** The backend contract. Mock impl today; a REST impl can replace it later. */
 export interface Api {
   auth: AuthApi;
@@ -62,4 +74,5 @@ export interface Api {
   contracts: ContractsApi;
   users: UsersApi;
   maintenance: MaintenanceApi;
+  chat: ChatApi;
 }
