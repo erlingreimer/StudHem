@@ -9,7 +9,23 @@
     "error": "Wrong username or password",
     "demoHeading": "Demo logins"
   },
-  "nav": { "admin": "Admin panel", "home": "Home", "properties": "Properties", "dashboard": "Overview", "maintenance": "Maintenance", "chat": "Chat" },
+  "nav": { "admin": "Admin panel", "home": "Home", "properties": "Properties", "dashboard": "Overview", "maintenance": "Maintenance", "chat": "Chat", "economy": "Economy", "rent": "Rent" },
+  "economy": {
+    "title": "Economy",
+    "myTitle": "My rent",
+    "period": "Period",
+    "amount": "Amount",
+    "dueDate": "Due date",
+    "status": "Status",
+    "paid": "Paid",
+    "pay": "Pay",
+    "sendReminder": "Send reminder",
+    "reminderSent": "Reminder sent",
+    "totalUnpaid": "Unpaid total",
+    "all": "All",
+    "filterStatus": "Status",
+    "empty": "No invoices"
+  },
   "chat": {
     "title": "Chat",
     "send": "Send",

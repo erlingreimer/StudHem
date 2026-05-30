@@ -13,4 +13,7 @@ export const keys = {
   maintenanceRequest: (id: string) => ['maintenance', id] as const,
   conversations: (userId: string) => ['conversations', userId] as const,
   messages: (conversationId: string) => ['messages', conversationId] as const,
+  invoices: () => ['invoices'] as const,
+  invoicesByResident: (residentId: string) =>
+    ['invoices', 'byResident', residentId] as const,
 };

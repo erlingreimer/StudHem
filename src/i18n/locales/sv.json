@@ -9,7 +9,23 @@
     "error": "Fel användarnamn eller lösenord",
     "demoHeading": "Demo-inloggningar"
   },
-  "nav": { "admin": "Adminpanel", "home": "Hem", "properties": "Bostäder", "dashboard": "Översikt", "maintenance": "Felanmälningar", "chat": "Chatt" },
+  "nav": { "admin": "Adminpanel", "home": "Hem", "properties": "Bostäder", "dashboard": "Översikt", "maintenance": "Felanmälningar", "chat": "Chatt", "economy": "Ekonomi", "rent": "Hyra" },
+  "economy": {
+    "title": "Ekonomi",
+    "myTitle": "Min hyra",
+    "period": "Period",
+    "amount": "Belopp",
+    "dueDate": "Förfallodatum",
+    "status": "Status",
+    "paid": "Betald",
+    "pay": "Betala",
+    "sendReminder": "Skicka påminnelse",
+    "reminderSent": "Påminnelse skickad",
+    "totalUnpaid": "Obetalt totalt",
+    "all": "Alla",
+    "filterStatus": "Status",
+    "empty": "Inga fakturor"
+  },
   "chat": {
     "title": "Chatt",
     "send": "Skicka",
