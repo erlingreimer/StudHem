@@ -1,5 +1,5 @@
 import type {
-  Contract, Conversation, MaintenanceCategory, MaintenanceRequest,
+  Contract, Conversation, Invoice, MaintenanceCategory, MaintenanceRequest,
   MaintenanceStatus, Message, Property, SafeUser,
 } from '@/types';
 
@@ -67,6 +67,15 @@ export interface ChatApi {
   sendMessage(input: SendMessageInput): Promise<Message>;
 }
 
+export interface EconomyApi {
+  list(): Promise<Invoice[]>;
+  byContractId(contractId: string): Promise<Invoice[]>;
+  byResident(residentId: string): Promise<Invoice[]>;
+  markPaid(invoiceId: string): Promise<Invoice>;
+  /** Mock no-op — resolves after latency. */
+  sendReminder(invoiceId: string): Promise<void>;
+}
+
 /** The backend contract. Mock impl today; a REST impl can replace it later. */
 export interface Api {
   auth: AuthApi;
@@ -75,4 +84,5 @@ export interface Api {
   users: UsersApi;
   maintenance: MaintenanceApi;
   chat: ChatApi;
+  economy: EconomyApi;
 }
