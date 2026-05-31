@@ -15,8 +15,16 @@ export interface PropertiesApi {
   remove(id: string): Promise<void>;
 }
 
+export interface MarkMovedOutResult {
+  contract: Contract;
+  property: Property;
+}
+
 export interface ContractsApi {
   byPropertyId(propertyId: string): Promise<Contract | undefined>;
+  byResidentId(residentId: string): Promise<Contract | undefined>;
+  giveNotice(contractId: string, moveOutDate: string): Promise<Contract>;
+  markMovedOut(contractId: string): Promise<MarkMovedOutResult>;
 }
 
 export interface InviteInput {
