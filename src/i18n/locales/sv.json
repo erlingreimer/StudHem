@@ -10,6 +10,24 @@
     "demoHeading": "Demo-inloggningar"
   },
   "nav": { "admin": "Adminpanel", "home": "Hem", "properties": "Bostäder", "dashboard": "Översikt", "maintenance": "Felanmälningar", "chat": "Chatt", "economy": "Ekonomi", "rent": "Hyra", "bookings": "Bokningar" },
+  "moveOut": {
+    "title": "Min bostad",
+    "address": "Adress",
+    "rent": "Hyra",
+    "startDate": "Inflyttning",
+    "noContract": "Inget kontrakt",
+    "giveNotice": "Säg upp",
+    "noticeTitle": "Säg upp kontraktet",
+    "moveOutDate": "Utflyttningsdatum",
+    "noticePeriodHint": "Uppsägningstid: 2 månader",
+    "tooShort": "Datumet är inom uppsägningstiden",
+    "confirm": "Bekräfta uppsägning",
+    "cancel": "Avbryt",
+    "noticeGiven": "Uppsagt",
+    "vacating": "Flyttar ut",
+    "markMovedOut": "Markera utflyttad",
+    "alreadyNoticed": "Du har redan sagt upp"
+  },
   "bookings": {
     "title": "Bokningar",
     "myTitle": "Mina bokningar",

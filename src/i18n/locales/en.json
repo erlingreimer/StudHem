@@ -10,6 +10,24 @@
     "demoHeading": "Demo logins"
   },
   "nav": { "admin": "Admin panel", "home": "Home", "properties": "Properties", "dashboard": "Overview", "maintenance": "Maintenance", "chat": "Chat", "economy": "Economy", "rent": "Rent", "bookings": "Bookings" },
+  "moveOut": {
+    "title": "My housing",
+    "address": "Address",
+    "rent": "Rent",
+    "startDate": "Move-in",
+    "noContract": "No contract",
+    "giveNotice": "Give notice",
+    "noticeTitle": "Give notice",
+    "moveOutDate": "Move-out date",
+    "noticePeriodHint": "Notice period: 2 months",
+    "tooShort": "Date is inside the notice period",
+    "confirm": "Confirm notice",
+    "cancel": "Cancel",
+    "noticeGiven": "Notice given",
+    "vacating": "Vacating",
+    "markMovedOut": "Mark as moved out",
+    "alreadyNoticed": "Notice already given"
+  },
   "bookings": {
     "title": "Bookings",
     "myTitle": "My bookings",

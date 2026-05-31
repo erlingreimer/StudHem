@@ -3,6 +3,7 @@ export const keys = {
   properties: () => ['properties'] as const,
   property: (id: string) => ['properties', id] as const,
   contractByProperty: (propertyId: string) => ['contracts', 'byProperty', propertyId] as const,
+  contractByResident: (residentId: string) => ['contracts', 'byResident', residentId] as const,
   users: () => ['users'] as const,
   user: (id: string) => ['users', id] as const,
   maintenance: () => ['maintenance'] as const,
