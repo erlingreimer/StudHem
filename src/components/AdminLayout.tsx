@@ -15,6 +15,7 @@ import ApartmentIcon from '@mui/icons-material/Apartment';
 import BuildIcon from '@mui/icons-material/Build';
 import ChatIcon from '@mui/icons-material/Chat';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import EventNoteIcon from '@mui/icons-material/EventNote';
 import { AppBarActions } from './AppBarActions';
 
 const DRAWER_WIDTH = 240;
@@ -29,6 +30,7 @@ export function AdminLayout() {
       { to: '/admin/maintenance', icon: <BuildIcon />, label: t('nav.maintenance'), end: false },
       { to: '/admin/chat', icon: <ChatIcon />, label: t('nav.chat'), end: false },
       { to: '/admin/economy', icon: <AttachMoneyIcon />, label: t('nav.economy'), end: false },
+      { to: '/admin/bookings', icon: <EventNoteIcon />, label: t('nav.bookings'), end: false },
     ],
     [t],
   );

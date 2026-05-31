@@ -11,6 +11,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import BuildIcon from '@mui/icons-material/Build';
 import ChatIcon from '@mui/icons-material/Chat';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import EventNoteIcon from '@mui/icons-material/EventNote';
 import { AppBarActions } from './AppBarActions';
 
 export function ResidentLayout() {
@@ -24,7 +25,9 @@ export function ResidentLayout() {
       ? '/chat'
       : pathname.startsWith('/rent')
         ? '/rent'
-        : '/home';
+        : pathname.startsWith('/bookings')
+          ? '/bookings'
+          : '/home';
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100dvh', pb: 8 }}>
@@ -62,6 +65,11 @@ export function ResidentLayout() {
             value="/rent"
             label={t('nav.rent')}
             icon={<AttachMoneyIcon />}
+          />
+          <BottomNavigationAction
+            value="/bookings"
+            label={t('nav.bookings')}
+            icon={<EventNoteIcon />}
           />
         </BottomNavigation>
       </Paper>

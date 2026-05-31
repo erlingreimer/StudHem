@@ -6,7 +6,10 @@
       "Bash(git remote *)",
       "Bash(ssh -o StrictHostKeyChecking=accept-new -o ConnectTimeout=10 -T git@github.com)",
       "Bash(git ls-remote *)",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "Bash(git pull *)",
+      "Bash(npm install *)",
+      "Read(//Users/erlingreimer/**)"
     ]
   }
 }
