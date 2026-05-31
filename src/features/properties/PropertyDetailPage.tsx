@@ -9,12 +9,13 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Alert from '@mui/material/Alert';
 import Skeleton from '@mui/material/Skeleton';
+import Chip from '@mui/material/Chip';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import EditIcon from '@mui/icons-material/Edit';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import { StatusChip } from '@/components/StatusChip';
 import { useProperty } from '@/services/hooks/properties';
-import { useContractByProperty } from '@/services/hooks/contracts';
+import { useContractByProperty, useMarkMovedOut } from '@/services/hooks/contracts';
 import { useUser } from '@/services/hooks/users';
 import { useMaintenanceByProperty } from '@/services/hooks/maintenance';
 import { MaintenanceRequestList } from '@/features/maintenance/MaintenanceRequestList';
@@ -31,6 +32,8 @@ export function PropertyDetailPage() {
 
   const [editing, setEditing] = useState(false);
   const [inviting, setInviting] = useState(false);
+  const markMovedOut = useMarkMovedOut();
+  const noticed = contract.data?.status === 'notice_given';
 
   if (property.isLoading) return <Skeleton variant="rectangular" height={300} />;
   if (!property.data) {
@@ -54,9 +57,25 @@ export function PropertyDetailPage() {
         </Button>
         <Typography variant="h4" sx={{ flexGrow: 1 }}>{p.name}</Typography>
         <StatusChip kind="property" value={p.status} />
+        {noticed && contract.data?.endDate && (
+          <Chip
+            color="warning"
+            size="small"
+            label={`${t('moveOut.vacating')} ${contract.data.endDate}`}
+          />
+        )}
         <Button startIcon={<EditIcon />} onClick={() => setEditing(true)}>
           {t('propertyDetail.edit')}
         </Button>
+        {noticed && contract.data && (
+          <Button
+            variant="outlined"
+            color="warning"
+            onClick={() => markMovedOut.mutateAsync(contract.data!.id)}
+          >
+            {t('moveOut.markMovedOut')}
+          </Button>
+        )}
         {p.status === 'vacant' && (
           <Button
             variant="contained"

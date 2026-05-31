@@ -1,9 +1,12 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import dayjs from 'dayjs';
 import { Routes, Route } from 'react-router-dom';
 import { renderWithProviders } from '@/test/renderWithProviders';
 import { PropertyDetailPage } from '@/features/properties/PropertyDetailPage';
 import { seedDatabase } from '@/services/mock/seed';
+import { api } from '@/services';
 
 function Tree() {
   return (
@@ -38,6 +41,17 @@ describe('PropertyDetailPage', () => {
     renderWithProviders(<Tree />, { route: '/admin/properties/p-101' });
     await waitFor(() => expect(screen.getByText(/vattenkran droppar/i)).toBeInTheDocument());
     expect(screen.getByText(/låset hakar upp/i)).toBeInTheDocument();
+  });
+
+  it('shows the vacating chip and lets admin mark the property as moved out', async () => {
+    const moveOut = dayjs().add(2, 'month').add(7, 'day').format('YYYY-MM-DD');
+    await api.contracts.giveNotice('c-1', moveOut);
+
+    renderWithProviders(<Tree />, { route: '/admin/properties/p-101' });
+    await waitFor(() => expect(screen.getByText(/flyttar ut/i)).toBeInTheDocument());
+
+    await userEvent.click(screen.getByRole('button', { name: /markera utflyttad/i }));
+    await waitFor(() => expect(screen.getByText(/ingen boende/i)).toBeInTheDocument());
   });
 
   it('shows a not-found message for an unknown id', async () => {
