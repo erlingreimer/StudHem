@@ -45,13 +45,13 @@ describe('AppRoutes', () => {
     );
   });
 
-  it('lands a resident on resident home', async () => {
+  it('lands a resident on resident home (My housing)', async () => {
     localStorage.setItem('studhem.v1.session', JSON.stringify(
       { id: 'u-res1', username: 'resident', role: 'resident', name: 'R', email: 'r@r.se', status: 'active' },
     ));
     renderWithProviders(<AppRoutes />, { route: '/home' });
     await waitFor(() =>
-      expect(screen.getByRole('heading', { name: /^hem$/i })).toBeInTheDocument(),
+      expect(screen.getByRole('heading', { name: /min bostad/i })).toBeInTheDocument(),
     );
   });
 

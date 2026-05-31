@@ -7,9 +7,11 @@ import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Skeleton from '@mui/material/Skeleton';
+import type { Contract } from '@/types';
 import { useProperties } from '@/services/hooks/properties';
 import { useMaintenanceRequests } from '@/services/hooks/maintenance';
 import { useInvoices } from '@/services/hooks/economy';
+import { readCollection } from '@/services/mock/storage';
 
 interface CardSpec {
   label: string;
@@ -46,6 +48,11 @@ export function AdminDashboard() {
     maintenance.data?.filter((r) => r.status !== 'resolved').length ?? 0;
   const unpaid =
     invoices.data?.filter((r) => r.status !== 'paid').length ?? 0;
+  // Reading contracts directly avoids a dedicated hook for one count card.
+  // It re-reads on each render, which is fine for a small synchronous load
+  // and stays in sync after mutations re-render the page via invalidations.
+  const upcomingMoveOuts = readCollection<Contract>('contracts', [])
+    .filter((c) => c.status === 'notice_given').length;
 
   const cards: CardSpec[] = [
     { label: t('dashboard.properties'), value: total, to: '/admin/properties' },
@@ -53,7 +60,7 @@ export function AdminDashboard() {
     { label: t('dashboard.vacancies'), value: vacancies, to: '/admin/properties' },
     { label: t('dashboard.openMaintenance'), value: openMaintenance, to: '/admin/maintenance' },
     { label: t('dashboard.unpaidRent'), value: unpaid, to: '/admin/economy' },
-    { label: t('dashboard.upcomingMoveOuts'), value: 0 },
+    { label: t('dashboard.upcomingMoveOuts'), value: upcomingMoveOuts, to: '/admin/properties' },
   ];
 
   return (
